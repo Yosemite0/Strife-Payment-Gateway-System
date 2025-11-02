@@ -1,5 +1,5 @@
 
-# Distributed System - Strife
+# Strife Payment Gateway System
 
 ## Overview
 
