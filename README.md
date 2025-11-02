@@ -1,5 +1,5 @@
 
-# Distributed System - Assignment-2 Q3: Strife
+# Distributed System - Strife
 
 ## Overview
 
