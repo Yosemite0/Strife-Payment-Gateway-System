@@ -1,0 +1,5 @@
+{
+    "consul_addr" : "localhost:8500",
+    "gateway_addr" : "localhost:8029",
+    "timeout_2pc" : 1000
+}

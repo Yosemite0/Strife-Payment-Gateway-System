@@ -1,0 +1,107 @@
+syntax = "proto3";
+
+package p3;
+
+service Gateway {
+    // For Bank 
+    rpc RegisterBank(BankName) returns (Ack) {}
+    rpc ViewBalance(Token) returns (Balance) {}
+
+    // For User
+    rpc Login(Auth) returns (Token) {}
+    rpc Logout(Token) returns (Ack) {}
+
+    // For Transaction
+    rpc TransferMoney(Transfer) returns (Ack) {}
+    
+    rpc TransactionHistory(Token) returns (TransactionList) {}
+}
+
+service Bank {
+    rpc Authenticate(Auth) returns (Ack) {}
+    rpc ViewBalance(Auth) returns (Balance) {}
+    
+    // For Transaction
+    rpc PrepareCredit(CreditRequest) returns (Ack) {}
+    rpc PrepareDebit(DebitRequest) returns (Ack) {}
+    
+    rpc CommitCredit(CreditRequest) returns (Ack) {}
+    rpc CommitDebit(DebitRequest) returns (Ack) {}
+    
+    rpc AbortCredit(CreditRequest) returns (Ack) {}
+    rpc AbortDebit(DebitRequest) returns (Ack) {}
+
+    // Get transaction history, now uses Auth
+    rpc TransactionHistory(Auth) returns (TransactionList) {}
+}
+
+// Common Messages
+message Ack {
+    bool success = 1;
+    string error = 2;
+}
+message Empty { }
+
+// Gateway Messages
+message BankName {
+    string bank_name = 1;
+    string bank_address = 2;
+    string bank_cert = 3;
+}
+
+message Auth {
+    string username = 1;
+    string bank_name = 2;
+    string password = 3;
+}
+
+message Token {
+    string token = 1;
+    // Using non-optional fields for simplicity
+    bool success = 2;
+    string error = 3;
+}
+
+message Balance {
+    int32 balance = 1;
+    Ack ack = 2;
+}
+
+message Transfer {
+    string transaction_id = 1;
+    string token = 2;
+    string to_bank = 3;
+    string to_username = 4;
+    int32 amount = 5;
+}
+
+message CreditRequest {
+    string transaction_id = 1;
+    string username = 2;
+    int32 amount = 3;
+    optional string from_bank = 4;
+    optional string from_username = 5;
+}
+
+message DebitRequest {
+    string transaction_id = 1;
+    string username = 2;
+    string password = 3;
+    int32 amount = 4;
+    optional string to_bank = 5;
+    optional string to_username = 6;
+}
+
+message TransactionList {
+    repeated Transaction transactions = 1;
+    Ack ack = 2;
+}
+
+message Transaction {
+    string transaction_id = 1;
+    string username = 2;
+    string other_username = 3;   
+    string other_bank = 4;       
+    int32 amount = 5;
+    string type = 6;           // "debit" or "credit"
+}

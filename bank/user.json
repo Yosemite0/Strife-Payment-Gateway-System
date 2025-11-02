@@ -1,0 +1,110 @@
+{
+    "icici": [
+        {
+            "username": "user01",
+            "password": "pass01",
+            "balance": 10000
+        },
+        {
+            "username": "user02",
+            "password": "pass02",
+            "balance": 20000
+        },
+        {
+            "username": "user03",
+            "password": "pass03",
+            "balance": 30000
+        },
+        {
+            "username": "user04",
+            "password": "pass04",
+            "balance": 40000
+        },
+        {
+            "username": "user05",
+            "password": "pass05",
+            "balance": 50000
+        }
+    ],
+    "hdfc": [
+        {
+            "username": "user01",
+            "password": "pass01",
+            "balance": 60000
+        },
+        {
+            "username": "user02",
+            "password": "pass02",
+            "balance": 70000
+        },
+        {
+            "username": "user03",
+            "password": "pass03",
+            "balance": 80000
+        },
+        {
+            "username": "user04",
+            "password": "pass04",
+            "balance": 90000
+        },
+        {
+            "username": "user05",
+            "password": "pass05",
+            "balance": 100000
+        }
+    ],
+    "sbi": [
+        {
+            "username": "user01",
+            "password": "pass01",
+            "balance": 100000
+        },
+        {
+            "username": "user02",
+            "password": "pass02",
+            "balance": 120000
+        },
+        {
+            "username": "user03",
+            "password": "pass03",
+            "balance": 130000
+        },
+        {
+            "username": "user04",
+            "password": "pass04",
+            "balance": 140000
+        },
+        {
+            "username": "user05",
+            "password": "pass05",
+            "balance": 150000
+        }
+    ],
+    "pnb": [
+        {
+            "username": "user01",
+            "password": "pass01",
+            "balance": 60000
+        },
+        {
+            "username": "user02",
+            "password": "pass02",
+            "balance": 70000
+        },
+        {
+            "username": "user03",
+            "password": "pass03",
+            "balance": 80000
+        },
+        {
+            "username": "user04",
+            "password": "pass04",
+            "balance": 90000
+        },
+        {
+            "username": "user05",
+            "password": "pass05",
+            "balance": 10000
+        }
+    ]
+}
